@@ -26,12 +26,15 @@ public class input
             else 
             {
                 System.out.print("Wrong guess. Do you want to quit? (yes/no): ");
-                String quitChoice = in.nextLine();
+                String quit = in.nextLine();
 
-                 if (quitChoice.equalsIgnoreCase("yes")) 
+                 if (quit.equalsIgnoreCase("yes")) 
                 {
                 break;
                 }
+                int partOfName = Math.min(numberOfGuesses, Name.length());
+                String Hint = Name.substring(0, partOfName);
+                System.out.println("Hint: " + Hint);
             }
         }
         System.out.println("You guessed " + numberOfGuesses + " times.");
