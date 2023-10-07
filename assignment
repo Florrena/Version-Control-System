@@ -12,6 +12,30 @@ public class input
 
         System.out.println("Welcome to the Guessing Game!");
         System.out.println("Guess my name :)");
+
+        while (true) 
+        {
+            System.out.print("What's my name?");
+            String guess = in.nextLine();
+            numberOfGuesses++;
+            if (guess.equalsIgnoreCase(Name)) 
+            {
+                System.out.println("Congratulations! You guessed it!");
+                System.out.println("You guessed " + numberOfGuesses + " times"); //This returns number of guesses
+            }
+            else 
+            {
+                System.out.print("Wrong guess. Do you want to quit? (yes/no): ");
+                String quitChoice = in.nextLine();
+
+                 if (quitChoice.equalsIgnoreCase("yes")) 
+                {
+                break;
+                }
+            }
+        }
+        System.out.println("You guessed " + numberOfGuesses + " times.");
     }
-      
+   
 }
+
