@@ -6,22 +6,20 @@ public class input
     {
         Scanner in = new Scanner(System.in);
 
-        String Name = "Ania";
+        String Name = "Ania"; //We can pick our desired name
         int numberOfGuesses = 0;
         
-
         System.out.println("Welcome to the Guessing Game!");
-        System.out.println("Guess my name :)");
 
         while (true) 
         {
             System.out.print("What's my name?");
             String guess = in.nextLine();
-            numberOfGuesses++;
+            numberOfGuesses++; //This counts how many attempts u had
+
             if (guess.equalsIgnoreCase(Name)) 
             {
-                System.out.println("Congratulations! You guessed it!");
-                System.out.println("You guessed " + numberOfGuesses + " times"); //This returns number of guesses
+                System.out.println("Congratulations!");
             }
             else 
             {
@@ -32,13 +30,16 @@ public class input
                 {
                 break;
                 }
-                int partOfName = Math.min(numberOfGuesses, Name.length());
-                String Hint = Name.substring(0, partOfName);
-                System.out.println("Hint: " + Hint);
-            }
+                    else 
+                    {
+                    //This code allows hints for the players
+                    int partOfName = Math.min(numberOfGuesses, Name.length());
+                    String Hint = Name.substring(0, partOfName);
+                    System.out.println("Hint: " + Hint);
+                    }
         }
-        System.out.println("You guessed " + numberOfGuesses + " times.");
+        System.out.println("You guessed " + numberOfGuesses + " times."); //This returns number of guesses  
+        }
     }
-   
 }
 
